@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
 import 'lenis/dist/lenis.css';
 import '../styles/global.css';
-import { instrument, inter } from './fonts';
+import { geist, geistMono } from './fonts';
 import Motion from '../components/Motion';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className={`${instrument.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="es" className={`${geist.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }} />
       </head>

@@ -1,14 +1,11 @@
-import { Instrument_Serif, Inter_Tight } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 
-export const instrument = Instrument_Serif({
+export const geist = Geist({
   subsets: ['latin'],
-  weight: '400',
-  style: ['normal', 'italic'],
-  variable: '--font-instrument',
+  variable: '--font-geist',
 });
 
-export const inter = Inter_Tight({
+export const geistMono = Geist_Mono({
   subsets: ['latin'],
-  weight: ['400', '500'],
-  variable: '--font-inter',
+  variable: '--font-geist-mono',
 });

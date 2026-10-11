@@ -10,7 +10,6 @@ const H = 941;
 // Viñetas que solo existen en la cuadrícula (las otras dos se regeneraron a tamaño completo).
 const panels = [
   { name: '4-volante', left: 838, top: 0 },
-  { name: '6-montanas', left: 838, top: 472 },
 ];
 
 const save = (img, name) =>
@@ -24,6 +23,8 @@ await save(sharp(`${SRC}/1-exterior.png`), '1-exterior');
 await save(sharp(`${SRC}/2-banco.png`), '2-banco');
 await save(sharp(`${SRC}/3-mecanismo.png`), '3-mecanismo');
 await save(sharp(`${SRC}/5-cielo-en-el-volante.png`), '5-cielo-en-el-volante');
+await save(sharp(`${SRC}/6-montanas.png`), '6-montanas');
+await save(sharp(`${SRC}/7-ciudad.png`), '7-ciudad');
 for (const p of panels) {
   const buf = await sharp(`${SRC}/3-cuadricula.png`).extract({ left: p.left, top: p.top, width: 833, height: 468 }).toBuffer();
   await save(sharp(buf), p.name);

@@ -2,6 +2,7 @@ import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initPortal } from './portal';
+import { initSecciones } from './secciones';
 
 export function initMotion() {
   gsap.registerPlugin(ScrollTrigger);
@@ -28,4 +29,5 @@ export function initMotion() {
 
   const world = document.querySelector<HTMLElement>('[data-world]');
   if (world) initPortal(world, reduceMotion);
+  initSecciones(reduceMotion);
 }

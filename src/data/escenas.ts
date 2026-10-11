@@ -12,6 +12,7 @@ export type Escena = {
   src: string;
   alt: string;
   lugar: string;
+  nota: string;
 };
 
 export type Tramo = {
@@ -29,36 +30,49 @@ export const escenas: Escena[] = [
     src: '/escenas/1-exterior.webp',
     alt: 'Taller de relojería de piedra en un pueblo alpino nevado, con una gran ventana redonda iluminada',
     lugar: 'El taller',
+    nota: 'Un taller de piedra al pie del glaciar, con la luz encendida.',
   },
   {
     id: 'banco',
     src: '/escenas/2-banco.webp',
     alt: 'Banco de relojero bajo una lámpara de latón, con una lupa en el centro y el lago nevado al fondo',
     lugar: 'El banco',
+    nota: 'Cuatrocientas horas de trabajo bajo la misma lámpara.',
   },
   {
     id: 'calibre',
     src: '/escenas/3-mecanismo.webp',
     alt: 'Mecanismo de reloj visto a través de la lupa: puentes grabados, engranajes y rubíes',
     lugar: 'El calibre',
+    nota: 'Doscientas doce piezas vistas a través de la lupa.',
   },
   {
     id: 'volante',
     src: '/escenas/4-volante.webp',
     alt: 'Volante dorado del reloj con su espiral, muy de cerca',
     lugar: 'El volante',
+    nota: 'El corazón del reloj: 28.800 alternancias por hora.',
   },
   {
     id: 'cielo',
     src: '/escenas/5-cielo-en-el-volante.webp',
     alt: 'El aro del volante enmarca un cielo estrellado sobre montañas nevadas',
     lugar: 'El cielo',
+    nota: 'Dentro del volante, el cielo de los Alpes.',
   },
   {
     id: 'nocturne',
     src: '/escenas/6-montanas.webp',
     alt: 'Vía Láctea sobre los Alpes nevados y un lago iluminado en el valle',
     lugar: 'Nocturne',
+    nota: 'La esfera Nocturne: montañas, nubes y estrellas.',
+  },
+  {
+    id: 'pueblo',
+    src: '/escenas/7-ciudad.webp',
+    alt: 'El pueblo junto al lago al anochecer, con la torre de la iglesia iluminada y las luces reflejadas en el agua',
+    lugar: 'El pueblo',
+    nota: 'De vuelta a la orilla del lago, donde empezó todo.',
   },
 ];
 
@@ -73,5 +87,7 @@ export const tramos: Tramo[] = [
   // Dentro del volante aparece el cielo.
   { portal: { x: 0.475, y: 0.522, r: 0.29 }, llegada: { x: 0.496, y: 0.47 }, zoom: 1.08, apertura: 0.32 },
   // A través del aro, a las montañas: el horizonte del aro coincide con el de la imagen final.
-  { portal: { x: 0.496, y: 0.47, r: 0.28 }, llegada: { x: 0.5, y: 0.42 }, zoom: 1.8, apertura: 0.42 },
+  { portal: { x: 0.496, y: 0.47, r: 0.28 }, llegada: { x: 0.55, y: 0.26 }, zoom: 1.8, apertura: 0.42 },
+  // Bajando a las luces del lago, de vuelta al pueblo del principio.
+  { portal: { x: 0.52, y: 0.715, r: 0.07 }, llegada: { x: 0.508, y: 0.6 }, zoom: 5 },
 ];

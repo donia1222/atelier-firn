@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-display: var(--font-instrument), serif;
-  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-geist), sans-serif;
+  --font-sans: var(--font-geist), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
 }
 
 @theme {
@@ -26,18 +27,25 @@
 
   body {
     font-family: var(--font-sans);
+    background-color: var(--color-noche);
   }
 
   h1,
   h2,
   h3 {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: -0.045em;
     text-wrap: balance;
   }
 
   p {
     text-wrap: pretty;
+  }
+
+  /* El acento de los titulares: latón, sin cursiva. */
+  em {
+    font-style: normal;
   }
 
   ::selection {
@@ -165,7 +173,42 @@
   100% { transform: translateY(14px); opacity: 0; }
 }
 
+/* Palabras del manifiesto: apagadas hasta que el scroll las enciende. */
+.word {
+  color: color-mix(in oklab, var(--color-nieve) 18%, transparent);
+  transition: color 600ms var(--ease-fluid);
+}
+
+.word.is-lit {
+  color: var(--color-nieve);
+}
+
+/* Paso activo del "cómo está hecho". */
+[data-paso] {
+  opacity: 0.45;
+  transition:
+    opacity 700ms var(--ease-fluid),
+    background-color 700ms var(--ease-fluid),
+    box-shadow 700ms var(--ease-fluid);
+}
+
+[data-paso].is-activo {
+  opacity: 1;
+  background-color: color-mix(in oklab, var(--color-laton) 8%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-laton) 45%, transparent);
+}
+
+.grano {
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 @media (prefers-reduced-motion: reduce) {
+  [data-paso] {
+    opacity: 1;
+  }
+
   .js [data-reveal],
   .js .stop-body > * {
     transform: none;

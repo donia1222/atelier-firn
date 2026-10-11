@@ -6,10 +6,10 @@ export default function Dial() {
   return (
     <div className="pointer-events-none absolute right-5 bottom-5 flex items-center gap-4 md:right-8 md:bottom-8">
       <div className="hidden text-right md:block">
-        <p data-dial-count className="text-[11px] tracking-[0.25em] text-nieve/60 tabular-nums">
+        <p data-dial-count className="font-mono text-[11px] tracking-[0.25em] text-nieve/60 tabular-nums">
           01 / {String(ticks).padStart(2, '0')}
         </p>
-        <p data-dial-label className="mt-1 font-display text-xl italic">
+        <p data-dial-label className="mt-1 font-mono text-sm tracking-wide">
           {escenas[0].lugar}
         </p>
       </div>

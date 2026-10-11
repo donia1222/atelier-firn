@@ -1,11 +1,17 @@
 import PortalWorld from '../components/PortalWorld';
-import Experimento from '../components/Experimento';
+import Manifiesto from '../components/Manifiesto';
+import Galeria from '../components/Galeria';
+import Revelado from '../components/Revelado';
+import Cifras from '../components/Cifras';
+import Cinta from '../components/Cinta';
+import ComoSeHizo from '../components/ComoSeHizo';
+import Pie from '../components/Pie';
 
 export default function Home() {
   return (
     <>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 pt-5 md:px-8 md:pt-7">
-        <a href="#taller" className="pointer-events-auto font-display text-3xl leading-none tracking-tight">
+        <a href="#taller" className="pointer-events-auto font-display text-2xl font-semibold leading-none tracking-[-0.06em]">
           Firn<span className="text-laton">.</span>
         </a>
         <a href="https://lweb.ch" className="btn btn-cristal pointer-events-auto" rel="noopener">
@@ -14,14 +20,16 @@ export default function Home() {
       </header>
       <main>
         <PortalWorld />
-        <Experimento />
+        <Manifiesto />
+        <Galeria />
+        <Revelado />
+        <Cifras />
+        <Cinta />
+        <ComoSeHizo />
       </main>
-      <footer className="px-6 pt-8 pb-12 md:px-12">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 border-t border-nieve/10 pt-8 text-xs text-nieve/50 md:flex-row md:justify-between">
-          <p>Atelier Firn es una marca ficticia. Imágenes generadas con IA.</p>
-          <p>Diseño y desarrollo: lweb.ch · Next.js, GSAP y Lenis</p>
-        </div>
-      </footer>
+      <Pie />
+      {/* Grano fino sobre toda la página: le quita el aspecto plano a los fondos de color. */}
+      <div aria-hidden="true" className="grano pointer-events-none fixed inset-0 z-[60]" />
     </>
   );
 }

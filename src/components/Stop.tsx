@@ -18,7 +18,7 @@ export default function Stop({ index, eyebrow, children }: Props) {
       className="stop pointer-events-none flex min-h-[220svh] flex-col justify-end"
     >
       <div className="stop-body pointer-events-auto sticky bottom-0 mx-auto flex w-full max-w-3xl flex-col items-center px-6 pt-32 pb-28 text-center md:pb-24">
-        <p className="text-xs font-medium tracking-[0.3em] text-laton uppercase">{eyebrow}</p>
+        <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">{eyebrow}</p>
         {children}
       </div>
     </article>

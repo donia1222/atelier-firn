@@ -82,7 +82,14 @@ export default function PortalWorld() {
           <h2 className={title}>
             Las montañas, <em className="text-laton">a tu muñeca</em>
           </h2>
-          <p className={body}>Carga manual, 72 horas de reserva. Una edición de 88 piezas que no existe: esto es un experimento.</p>
+          <p className={body}>Carga manual y 72 horas de reserva. Una edición de 88 piezas que no existe: esto es un experimento.</p>
+        </Stop>
+
+        <Stop index={6} eyebrow="De vuelta al pueblo">
+          <h2 className={title}>
+            Todo empieza y acaba <em className="text-laton">aquí</em>
+          </h2>
+          <p className={body}>Del taller al cielo y otra vez a la orilla del lago, donde se enciende la primera luz.</p>
           <a href="#experimento" className="btn btn-cristal mt-8">
             Cómo está hecho
           </a>
