@@ -15,7 +15,7 @@ export default function Home() {
           Firn<span className="text-laton">.</span>
         </a>
         <a href="https://lweb.ch" className="btn btn-cristal pointer-events-auto" rel="noopener">
-          Ein Experiment von lweb.ch
+          Gestaltet von Lweb
         </a>
       </header>
       <main>
