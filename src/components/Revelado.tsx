@@ -8,7 +8,7 @@ export default function Revelado() {
           <img
             data-revelado-img
             src="/escenas/6-montanas.webp"
-            alt="Vía Láctea sobre los Alpes y el pueblo iluminado junto al lago"
+            alt="Milchstrasse über den Alpen und das beleuchtete Dorf am See"
             width={1672}
             height={941}
             loading="lazy"
@@ -24,16 +24,16 @@ export default function Revelado() {
         />
 
         <div data-revelado-antes className="absolute inset-x-0 top-[18%] text-center">
-          <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">La esfera</p>
-          <p className="mt-4 font-display text-4xl font-medium tracking-[-0.045em] md:text-6xl">Mira por el volante</p>
+          <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">Das Zifferblatt</p>
+          <p className="mt-4 font-display text-4xl font-medium tracking-[-0.045em] md:text-6xl">Schauen Sie durch die Unruh</p>
         </div>
 
         <div data-revelado-despues className="absolute inset-x-0 bottom-[12%] px-6 text-center opacity-0">
           <h2 id="revelado-titulo" className="mx-auto max-w-4xl text-5xl leading-[0.95] md:text-8xl">
-            El cielo de Firn, <em className="text-laton">en tu muñeca</em>
+            Der Himmel von Firn <em className="text-laton">am Handgelenk</em>
           </h2>
           <p className="mx-auto mt-6 max-w-md text-base text-nieve/75 md:text-lg">
-            La esfera Nocturne se pinta a mano con el cielo que hay sobre el taller la noche en que se termina cada pieza.
+            Das Zifferblatt Nocturne wird von Hand bemalt – mit dem Himmel über der Werkstatt in der Nacht, in der jede Uhr fertig wird.
           </p>
         </div>
       </div>

@@ -7,7 +7,7 @@ const body = 'mt-5 max-w-lg text-base text-nieve/75 md:text-lg';
 
 export default function PortalWorld() {
   return (
-    <section data-world aria-label="Recorrido por el taller" className="relative">
+    <section data-world aria-label="Rundgang durch die Werkstatt" className="relative">
       <div data-stage className="sticky top-0 h-lvh overflow-hidden bg-noche">
         {/* Primera escena como imagen normal: se ve al instante mientras el canvas carga las demás. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -40,51 +40,51 @@ export default function PortalWorld() {
       </div>
 
       <div className="relative z-10 -mt-[100lvh]">
-        <Stop index={0} eyebrow="Atelier Firn · Relojería alpina">
+        <Stop index={0} eyebrow="Atelier Firn · Uhrmacherei in den Alpen">
           <h1 className={title}>
-            El tiempo se hace <em className="text-laton">a mano</em>
+            Zeit wird <em className="text-laton">von Hand</em> gemacht
           </h1>
-          <p className={body}>Un taller de piedra al pie del glaciar. Desliza y entra por la ventana.</p>
+          <p className={body}>Eine Werkstatt aus Stein am Fuss des Gletschers. Scrollen Sie und treten Sie durchs Fenster ein.</p>
         </Stop>
 
-        <Stop index={1} eyebrow="El banco">
-          <h2 className={title}>Cuatrocientas horas bajo la misma lámpara</h2>
+        <Stop index={1} eyebrow="Die Werkbank">
+          <h2 className={title}>Vierhundert Stunden unter derselben Lampe</h2>
           <p className={body}>
-            Cada calibre se monta, se ajusta y se vuelve a desmontar en un solo banco, por una sola persona.
+            Jedes Kaliber wird an einer einzigen Werkbank montiert, reguliert und wieder zerlegt – von einer einzigen Person.
           </p>
         </Stop>
 
-        <Stop index={2} eyebrow="El calibre">
-          <h2 className={title}>Doscientas piezas en el tamaño de una moneda</h2>
-          <p className={body}>Puentes grabados a mano y rubíes que solo verá quien abra la tapa.</p>
+        <Stop index={2} eyebrow="Das Kaliber">
+          <h2 className={title}>Zweihundert Teile in der Grösse einer Münze</h2>
+          <p className={body}>Von Hand gravierte Brücken und Rubine, die nur sieht, wer den Boden öffnet.</p>
         </Stop>
 
-        <Stop index={3} eyebrow="El volante">
+        <Stop index={3} eyebrow="Die Unruh">
           <h2 className={title}>
-            Late <em className="text-laton">28.800</em> veces por hora
+            Sie schlägt <em className="text-laton">28'800</em> Mal pro Stunde
           </h2>
-          <p className={body}>El volante y su espiral marcan el ritmo. Ajustarlos lleva días: un pelo fuera de sitio y el reloj miente.</p>
+          <p className={body}>Unruh und Spirale geben den Takt vor. Sie einzustellen dauert Tage: ein Haar daneben, und die Uhr lügt.</p>
         </Stop>
 
-        <Stop index={4} eyebrow="La complicación">
-          <h2 className={title}>Dentro del volante, el cielo</h2>
-          <p className={body}>La esfera Nocturne muestra el cielo de los Alpes tal y como está sobre el taller, noche a noche.</p>
+        <Stop index={4} eyebrow="Die Komplikation">
+          <h2 className={title}>In der Unruh: der Himmel</h2>
+          <p className={body}>Das Zifferblatt Nocturne zeigt den Alpenhimmel, wie er über der Werkstatt steht – Nacht für Nacht.</p>
         </Stop>
 
-        <Stop index={5} eyebrow="Firn Nocturne · Calibre F-01">
+        <Stop index={5} eyebrow="Firn Nocturne · Kaliber F-01">
           <h2 className={title}>
-            Las montañas, <em className="text-laton">a tu muñeca</em>
+            Die Berge <em className="text-laton">am Handgelenk</em>
           </h2>
-          <p className={body}>Carga manual y 72 horas de reserva. Una edición de 88 piezas que no existe: esto es un experimento.</p>
+          <p className={body}>Handaufzug und 72 Stunden Gangreserve. Eine Edition von 88 Stück, die es nicht gibt: Das hier ist ein Experiment.</p>
         </Stop>
 
-        <Stop index={6} eyebrow="De vuelta al pueblo">
+        <Stop index={6} eyebrow="Zurück im Dorf">
           <h2 className={title}>
-            Todo empieza y acaba <em className="text-laton">aquí</em>
+            Alles beginnt und endet <em className="text-laton">hier</em>
           </h2>
-          <p className={body}>Del taller al cielo y otra vez a la orilla del lago, donde se enciende la primera luz.</p>
+          <p className={body}>Von der Werkstatt in den Himmel und zurück ans Seeufer, wo das erste Licht angeht.</p>
           <a href="#experimento" className="btn btn-cristal mt-8">
-            Cómo está hecho
+            Wie es gemacht ist
           </a>
         </Stop>
       </div>

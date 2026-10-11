@@ -1,8 +1,8 @@
 const cifras = [
-  { valor: 28800, sufijo: '', texto: 'alternancias por hora' },
-  { valor: 212, sufijo: '', texto: 'componentes en el calibre F-01' },
-  { valor: 72, sufijo: ' h', texto: 'de reserva de marcha' },
-  { valor: 88, sufijo: '', texto: 'piezas en toda la edición' },
+  { valor: 28800, sufijo: '', texto: 'Halbschwingungen pro Stunde' },
+  { valor: 212, sufijo: '', texto: 'Bauteile im Kaliber F-01' },
+  { valor: 72, sufijo: ' h', texto: 'Gangreserve' },
+  { valor: 88, sufijo: '', texto: 'Stück in der ganzen Edition' },
 ];
 
 // Espiral del volante: una espiral de Arquímedes aproximada con muchos puntos.
@@ -48,9 +48,9 @@ export default function Cifras() {
           <Volante />
         </div>
         <div>
-          <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">Calibre F-01</p>
+          <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">Kaliber F-01</p>
           <h2 id="cifras-titulo" data-split className="mt-4 text-5xl leading-[0.95] md:text-7xl">
-            Un corazón que <em className="text-laton">no descansa</em>
+            Ein Herz, das <em className="text-laton">nie ruht</em>
           </h2>
           <dl className="mt-14 grid grid-cols-2 gap-x-8 gap-y-12">
             {cifras.map((cifra) => (

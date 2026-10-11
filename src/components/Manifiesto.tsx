@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-const frase = 'Un reloj no mide el tiempo. Lo guarda. Cada segundo que marca lo puso alguien aquí, a mano, mirando el lago.';
+const frase = 'Eine Uhr misst die Zeit nicht. Sie bewahrt sie. Jede Sekunde, die sie zeigt, hat jemand hier von Hand gesetzt, mit Blick auf den See.';
 
 // Esfera de 60 marcas que se dibuja y gira detrás de la frase.
 function Esfera() {
@@ -30,7 +30,7 @@ function Esfera() {
 
 export default function Manifiesto() {
   return (
-    <section data-bg="#0a0e1c" data-manifiesto aria-label="Manifiesto" className="relative h-[240svh]">
+    <section data-bg="#0a0e1c" data-manifiesto aria-label="Manifest" className="relative h-[240svh]">
       <div className="sticky top-0 flex h-svh items-center justify-center overflow-hidden px-6">
         <div className="pointer-events-none absolute top-1/2 left-1/2 size-[min(130vw,980px)] -translate-1/2 text-nieve/20">
           <Esfera />

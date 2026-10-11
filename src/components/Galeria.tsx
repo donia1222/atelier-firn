@@ -6,13 +6,13 @@ export default function Galeria() {
       <div data-galeria-pin className="relative flex h-svh flex-col justify-center overflow-hidden">
         <div className="flex items-end justify-between gap-6 px-6 md:px-12">
           <div>
-            <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">El recorrido</p>
+            <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">Der Rundgang</p>
             <h2 id="galeria-titulo" data-split className="mt-4 text-5xl leading-[0.95] md:text-7xl">
-              Siete escenas, <em className="text-laton">un solo viaje</em>
+              Sieben Szenen, <em className="text-laton">eine Reise</em>
             </h2>
           </div>
           <p className="hidden max-w-xs pb-2 text-sm text-nieve/60 md:block">
-            Cada imagen esconde la siguiente dentro de un círculo: ventana, lupa, volante, aro, lago.
+            Jedes Bild versteckt das nächste in einem Kreis: Fenster, Lupe, Unruh, Reif, See.
           </p>
         </div>
 

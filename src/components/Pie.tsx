@@ -4,10 +4,10 @@ export default function Pie() {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <p className="max-w-sm text-sm text-nieve/60">
-            Atelier Firn es una marca ficticia. Imágenes generadas con IA; animación con GSAP, Lenis y un poco de geometría.
+            Atelier Firn ist eine fiktive Marke. Bilder mit KI generiert, Animation mit GSAP, Lenis und etwas Geometrie.
           </p>
           <a href="#taller" className="btn btn-cristal self-start md:self-auto">
-            Volver a entrar
+            Nochmals eintreten
           </a>
         </div>
         <p
@@ -18,9 +18,9 @@ export default function Pie() {
           Firn<span className="text-laton">.</span>
         </p>
         <div className="mt-8 flex flex-col gap-2 border-t border-nieve/10 pt-6 font-mono text-[11px] tracking-wider text-nieve/45 uppercase md:flex-row md:justify-between">
-          <p>Experimento de portafolio · 2026</p>
+          <p>Portfolio-Experiment · 2026</p>
           <a href="https://lweb.ch" className="hover:text-laton" rel="noopener">
-            Diseño y desarrollo: lweb.ch
+            Design und Entwicklung: lweb.ch
           </a>
         </div>
       </div>

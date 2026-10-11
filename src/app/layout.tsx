@@ -6,9 +6,9 @@ import { geist, geistMono } from './fonts';
 import Motion from '../components/Motion';
 
 export const metadata: Metadata = {
-  title: 'Atelier Firn · Un recorrido por portales',
+  title: 'Atelier Firn · Ein Rundgang durch Portale',
   description:
-    'Experimento de scroll: seis imágenes generadas con IA unidas por portales. Sin vídeo, solo zoom, máscaras y movimiento.',
+    'Scroll-Experiment: sieben mit KI generierte Bilder, verbunden durch Portale. Kein Video – nur Zoom, Masken und Bewegung.',
   robots: 'noindex, follow',
   icons: { icon: { url: '/favicon.svg', type: 'image/svg+xml' } },
 };
@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es" className={`${geist.variable} ${geistMono.variable}`} suppressHydrationWarning>
+    <html lang="de-CH" className={`${geist.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }} />
       </head>

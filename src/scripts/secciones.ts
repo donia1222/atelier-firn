@@ -21,7 +21,8 @@ export function initSecciones(reduceMotion: boolean) {
   pie();
 }
 
-const formato = (n: number) => Math.round(n).toLocaleString('es-ES').replace(/\s/g, '.');
+// Formato suizo: 28'800.
+const formato = (n: number) => Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
 
 // El fondo de la página cambia de color al entrar en cada sección.
 function fondos() {

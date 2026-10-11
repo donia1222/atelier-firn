@@ -1,4 +1,4 @@
-const palabras = ['Hecho a mano', '28.800 A/h', 'Valle de Firn', 'Calibre F-01', '88 piezas', 'Esfera Nocturne'];
+const palabras = ['Von Hand gemacht', "28'800 A/h", 'Firntal', 'Kaliber F-01', '88 Stück', 'Zifferblatt Nocturne'];
 
 function Fila({ invertida = false }: { invertida?: boolean }) {
   // Dos copias seguidas para que el bucle no tenga costuras.

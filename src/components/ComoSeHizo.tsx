@@ -3,27 +3,27 @@ import { escenas } from '../data/escenas';
 
 const pasos = [
   {
-    titulo: 'Generar las escenas',
-    texto: 'Siete imágenes hechas con ChatGPT, cada una pedida con una abertura redonda en el centro que esconde la siguiente.',
+    titulo: 'Szenen generieren',
+    texto: 'Sieben Bilder, mit ChatGPT erstellt – jedes mit einer runden Öffnung in der Mitte, die das nächste versteckt.',
   },
   {
-    titulo: 'Medir los portales',
-    texto: 'Para cada imagen se marca el centro y el radio de su portal, y el punto de la escena siguiente donde se aterriza.',
+    titulo: 'Portale vermessen',
+    texto: 'Für jedes Bild werden Mittelpunkt und Radius des Portals markiert, dazu der Punkt der nächsten Szene, an dem man landet.',
   },
   {
-    titulo: 'Zoom y máscaras',
-    texto: 'El scroll mueve una cámara compartida: una escena se acerca a su portal y la siguiente crece dentro de una máscara radial.',
+    titulo: 'Zoom und Masken',
+    texto: 'Das Scrollen bewegt eine gemeinsame Kamera: Eine Szene nähert sich ihrem Portal, die nächste wächst in einer runden Maske heran.',
   },
   {
-    titulo: 'Darle vida',
-    texto: 'Respiración lenta, parallax con el puntero y nieve en canvas que sale despedida al cruzar la ventana. Ni un vídeo.',
+    titulo: 'Leben einhauchen',
+    texto: 'Langsames Atmen, Parallax mit dem Mauszeiger und Schnee, der beim Durchqueren des Fensters davonfliegt. Kein einziges Video.',
   },
 ];
 
 const datos = [
-  { valor: String(escenas.length), texto: 'imágenes generadas' },
-  { valor: '0', texto: 'vídeos' },
-  { valor: '1,9 MB', texto: 'todo el recorrido' },
+  { valor: String(escenas.length), texto: 'generierte Bilder' },
+  { valor: '0', texto: 'Videos' },
+  { valor: '1.9 MB', texto: 'für den ganzen Rundgang' },
 ];
 
 // Diagrama: círculos anidados, uno por escena. Al hacer scroll la cámara entra en ellos.
@@ -58,9 +58,9 @@ export default function ComoSeHizo() {
   return (
     <section id="experimento" data-bg="#070a14" data-como aria-labelledby="como-titulo" className="relative px-6 py-32 md:px-12">
       <div className="mx-auto max-w-7xl">
-        <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">El experimento</p>
+        <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">Das Experiment</p>
         <h2 id="como-titulo" data-split className="mt-4 max-w-4xl text-5xl leading-[0.95] md:text-8xl">
-          Un paseo hecho con portales, <em className="text-laton">no con vídeo</em>
+          Ein Rundgang aus Portalen, <em className="text-laton">nicht aus Video</em>
         </h2>
 
         <div className="mt-20 grid gap-16 lg:grid-cols-2">
