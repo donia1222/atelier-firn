@@ -74,7 +74,7 @@ export default function ComoSeHizo() {
               <li
                 key={paso.titulo}
                 data-paso
-                className="rounded-[2rem] bg-nieve/[0.03] p-8 ring-1 ring-nieve/10 backdrop-blur-sm transition-colors duration-700 md:p-10"
+                className="rounded-[2rem] bg-nieve/[0.03] p-8 ring-1 ring-nieve/10 transition-colors duration-700 md:p-10"
               >
                 <span className="font-mono text-sm text-laton">{String(i + 1).padStart(2, '0')}</span>
                 <h3 className="mt-6 text-3xl md:text-4xl">{paso.titulo}</h3>

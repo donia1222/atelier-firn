@@ -9,26 +9,19 @@ export default function PortalWorld() {
   return (
     <section data-world aria-label="Recorrido por el taller" className="relative">
       <div data-stage className="sticky top-0 h-lvh overflow-hidden bg-noche">
-        <div data-drift aria-hidden="true" className="absolute inset-0" style={{ transform: 'scale(1.04)' }}>
-          {escenas.map((escena, i) => (
-            <div key={escena.id} className="scene" style={i === 0 ? undefined : { visibility: 'hidden' }}>
-              <div data-layer className="scene-layer">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={escena.src}
-                  alt=""
-                  width={1672}
-                  height={941}
-                  fetchPriority={i === 0 ? 'high' : 'low'}
-                  decoding="async"
-                  className="size-full object-cover"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <canvas data-snow aria-hidden="true" className="pointer-events-none absolute inset-0 size-full" />
+        {/* Primera escena como imagen normal: se ve al instante mientras el canvas carga las demás. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          data-poster
+          src={escenas[0].src}
+          alt=""
+          aria-hidden="true"
+          width={1672}
+          height={941}
+          fetchPriority="high"
+          className="absolute inset-0 size-full scale-[1.04] object-cover transition-opacity duration-700"
+        />
+        <canvas data-portal aria-hidden="true" className="absolute inset-0 size-full opacity-0 transition-opacity duration-700" />
 
         {/* Velos: viñeta para dar profundidad y degradado inferior para leer el texto. */}
         <div

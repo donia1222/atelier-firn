@@ -63,12 +63,14 @@ function palabras(reduceMotion: boolean) {
 
 // Titulares: cada línea sube desde debajo de su propia máscara, palabra a palabra y con un poco de desenfoque.
 function titulares() {
+  // El desenfoque palabra a palabra solo con ratón; en táctil, solo el movimiento.
+  const conBlur = matchMedia('(hover: hover) and (pointer: fine)').matches;
   document.fonts.ready.then(() => {
     document.querySelectorAll<HTMLElement>('[data-split]').forEach((titular) => {
       const split = SplitText.create(titular, { type: 'lines,words', mask: 'lines', linesClass: 'pb-[0.08em]' });
       gsap.from(split.words, {
         yPercent: 110,
-        filter: 'blur(8px)',
+        ...(conBlur ? { filter: 'blur(8px)' } : {}),
         duration: 1.2,
         ease: 'expo.out',
         stagger: 0.06,
@@ -164,7 +166,9 @@ function cifras() {
   const volante = document.querySelector('[data-volante]');
   const espiral = document.querySelector<SVGPathElement>('[data-espiral]');
   if (volante) {
-    gsap.fromTo(volante, { rotate: -150 }, { rotate: 150, duration: 0.9, ease: 'sine.inOut', repeat: -1, yoyo: true });
+    const oscila = gsap.fromTo(volante, { rotate: -150 }, { rotate: 150, duration: 0.9, ease: 'sine.inOut', repeat: -1, yoyo: true, paused: true });
+    // Solo oscila mientras se ve.
+    ScrollTrigger.create({ trigger: '[data-cifras]', start: 'top bottom', end: 'bottom top', onToggle: (self) => (self.isActive ? oscila.play() : oscila.pause()) });
   }
   if (espiral) {
     gsap.set(espiral, { strokeDasharray: 1, strokeDashoffset: 1 });
@@ -182,14 +186,17 @@ function cinta() {
   if (!filas.length) return;
   let impulso = 0;
   let inclinacion = 0;
+  let visible = false;
   ScrollTrigger.create({
     trigger: '[data-cinta]',
     start: 'top bottom',
     end: 'bottom top',
+    onToggle: (self) => (visible = self.isActive),
     onUpdate: (self) => (impulso = gsap.utils.clamp(-30, 30, self.getVelocity() / 120)),
   });
   const posiciones = filas.map(() => 0);
   gsap.ticker.add((_, delta) => {
+    if (!visible) return;
     impulso *= 0.92;
     inclinacion += (impulso * 0.6 - inclinacion) * 0.1;
     filas.forEach((fila, i) => {

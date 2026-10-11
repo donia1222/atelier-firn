@@ -13,7 +13,7 @@ export default function Dial() {
           {escenas[0].lugar}
         </p>
       </div>
-      <div className="relative size-14 rounded-full bg-noche/40 ring-1 ring-nieve/20 backdrop-blur-md md:size-16">
+      <div className="relative size-14 rounded-full bg-noche/60 ring-1 ring-nieve/20 md:backdrop-blur-md md:size-16">
         <svg viewBox="0 0 64 64" className="absolute inset-0 size-full" aria-hidden="true">
           {Array.from({ length: ticks }, (_, i) => {
             const a = (i / ticks) * Math.PI * 2 - Math.PI / 2;

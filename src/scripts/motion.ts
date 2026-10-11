@@ -6,6 +6,8 @@ import { initSecciones } from './secciones';
 
 export function initMotion() {
   gsap.registerPlugin(ScrollTrigger);
+  // En móvil la barra del navegador cambia el alto de la pantalla al hacer scroll: no recalcular todo por eso.
+  ScrollTrigger.config({ ignoreMobileResize: true });
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (!reduceMotion) {

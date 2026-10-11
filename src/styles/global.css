@@ -90,9 +90,16 @@
   }
 
   .btn-cristal {
-    background-color: color-mix(in oklab, var(--color-nieve) 8%, transparent);
+    background-color: color-mix(in oklab, var(--color-noche) 70%, transparent);
     box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-nieve) 22%, transparent);
-    backdrop-filter: blur(16px);
+  }
+
+  /* El desenfoque del fondo solo en escritorio: en móvil, sobre elementos fijos, se recalcula en cada frame. */
+  @media (hover: hover) and (pointer: fine) {
+    .btn-cristal {
+      background-color: color-mix(in oklab, var(--color-nieve) 8%, transparent);
+      backdrop-filter: blur(16px);
+    }
   }
 
   .btn-cristal:hover {
@@ -116,24 +123,6 @@
     transform: none;
     filter: none;
   }
-}
-
-/* Escenario: cada escena es un marco 16:9 que cubre la pantalla. */
-.scene {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: max(100vw, 177.78lvh);
-  aspect-ratio: 16 / 9;
-  translate: -50% -50%;
-}
-
-.scene-layer {
-  position: absolute;
-  inset: 0;
-  transform-origin: 0 0;
-  will-change: transform, opacity, filter;
-  mask-repeat: no-repeat;
 }
 
 /* Texto de cada parada: aparece desenfocado y se enfoca cuando la parada es la actual. */
@@ -199,9 +188,25 @@
 }
 
 .grano {
+  display: none;
   opacity: 0.07;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Grano solo en escritorio: una capa fija con modo de fusión encima de todo es cara en móvil. */
+@media (hover: hover) and (pointer: fine) {
+  .grano {
+    display: block;
+  }
+}
+
+/* En pantallas táctiles, entradas sin desenfoque animado: se nota poco y cuesta mucho al hacer scroll rápido. */
+@media (pointer: coarse) {
+  .js [data-reveal],
+  .js .stop-body > * {
+    filter: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
