@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-instrument), serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+@theme {
+  --color-noche: #070a14;
+  --color-nieve: #eef1f6;
+  --color-laton: #d9ad62;
+  --ease-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    background-color: var(--color-noche);
+    color: var(--color-nieve);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-laton);
+    color: var(--color-noche);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-laton);
+    outline-offset: 4px;
+  }
+}
+
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    border-radius: 9999px;
+    padding: 10px 20px;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition:
+      background-color 700ms var(--ease-fluid),
+      color 700ms var(--ease-fluid),
+      transform 700ms var(--ease-fluid);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn-laton {
+    background-color: var(--color-laton);
+    color: var(--color-noche);
+  }
+
+  .btn-laton:hover {
+    background-color: var(--color-nieve);
+  }
+
+  .btn-cristal {
+    background-color: color-mix(in oklab, var(--color-nieve) 8%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-nieve) 22%, transparent);
+    backdrop-filter: blur(16px);
+  }
+
+  .btn-cristal:hover {
+    background-color: var(--color-nieve);
+    color: var(--color-noche);
+  }
+
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(3rem);
+    filter: blur(10px);
+    transition:
+      opacity 1000ms var(--ease-fluid),
+      transform 1000ms var(--ease-fluid),
+      filter 1000ms var(--ease-fluid);
+    transition-delay: var(--d, 0ms);
+  }
+
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+/* Escenario: cada escena es un marco 16:9 que cubre la pantalla. */
+.scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100vw, 177.78lvh);
+  aspect-ratio: 16 / 9;
+  translate: -50% -50%;
+}
+
+.scene-layer {
+  position: absolute;
+  inset: 0;
+  transform-origin: 0 0;
+  will-change: transform, opacity, filter;
+  mask-repeat: no-repeat;
+}
+
+/* Texto de cada parada: aparece desenfocado y se enfoca cuando la parada es la actual. */
+.js .stop-body > * {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  filter: blur(8px);
+  transition:
+    opacity 700ms var(--ease-fluid),
+    transform 700ms var(--ease-fluid),
+    filter 700ms var(--ease-fluid);
+}
+
+.js .stop.is-current .stop-body > *,
+.js .stop-body:focus-within > * {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition-duration: 1200ms;
+}
+
+.stop.is-current .stop-body > :nth-child(2) { transition-delay: 80ms; }
+.stop.is-current .stop-body > :nth-child(3) { transition-delay: 160ms; }
+.stop.is-current .stop-body > :nth-child(4) { transition-delay: 240ms; }
+
+.js .stop:not(.is-current) .stop-body:not(:focus-within) {
+  pointer-events: none;
+}
+
+.hint-dot {
+  animation: hint 2200ms var(--ease-fluid) infinite;
+}
+
+@keyframes hint {
+  0% { transform: translateY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal],
+  .js .stop-body > * {
+    transform: none;
+    filter: none;
+  }
+
+  .hint-dot {
+    animation: none;
+  }
+}

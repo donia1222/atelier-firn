@@ -1,0 +1,34 @@
+import type { ReactNode } from 'react';
+import type { Metadata, Viewport } from 'next';
+import 'lenis/dist/lenis.css';
+import '../styles/global.css';
+import { instrument, inter } from './fonts';
+import Motion from '../components/Motion';
+
+export const metadata: Metadata = {
+  title: 'Atelier Firn · Un recorrido por portales',
+  description:
+    'Experimento de scroll: seis imágenes generadas con IA unidas por portales. Sin vídeo, solo zoom, máscaras y movimiento.',
+  robots: 'noindex, follow',
+  icons: { icon: { url: '/favicon.svg', type: 'image/svg+xml' } },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#070a14',
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="es" className={`${instrument.variable} ${inter.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js');" }} />
+      </head>
+      <body className="min-h-svh overflow-x-clip">
+        {children}
+        <Motion />
+      </body>
+    </html>
+  );
+}
