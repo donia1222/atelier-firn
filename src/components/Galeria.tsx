@@ -3,11 +3,11 @@ import { escenas } from '../data/escenas';
 export default function Galeria() {
   return (
     <section data-bg="#120c07" data-galeria aria-labelledby="galeria-titulo" className="relative">
-      <div data-galeria-pin className="relative flex h-svh flex-col justify-center overflow-hidden">
+      <div data-galeria-pin className="relative flex h-svh flex-col justify-center overflow-hidden pt-16 md:pt-0">
         <div className="flex items-end justify-between gap-6 px-6 md:px-12">
           <div>
             <p className="font-mono text-[11px] tracking-[0.3em] text-laton uppercase">Der Rundgang</p>
-            <h2 id="galeria-titulo" data-split className="mt-4 text-5xl leading-[0.95] md:text-7xl">
+            <h2 id="galeria-titulo" data-split className="mt-3 text-[clamp(2.1rem,6.5svh,3rem)] leading-[0.95] md:mt-4 md:text-7xl">
               Sieben Szenen, <em className="text-laton">eine Reise</em>
             </h2>
           </div>
@@ -16,12 +16,12 @@ export default function Galeria() {
           </p>
         </div>
 
-        <ol data-galeria-pista className="mt-10 flex w-max gap-5 px-6 md:mt-14 md:gap-8 md:px-12">
+        <ol data-galeria-pista className="mt-[4svh] flex w-max gap-5 px-6 md:mt-14 md:gap-8 md:px-12">
           {escenas.map((escena, i) => (
             <li
               key={escena.id}
               data-galeria-tarjeta
-              className="group relative h-[52svh] w-[78vw] shrink-0 overflow-hidden rounded-[2rem] ring-1 ring-nieve/10 md:h-[58svh] md:w-[42vw]"
+              className="group relative h-[min(52svh,calc(100svh-15rem))] w-[78vw] shrink-0 overflow-hidden rounded-[2rem] ring-1 ring-nieve/10 md:h-[58svh] md:w-[42vw]"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
